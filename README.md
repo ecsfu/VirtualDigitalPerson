@@ -1,5 +1,5 @@
 # VirtualDigitalPerson
-###1.端到端声音克隆<br />
+## 1.端到端声音克隆<br />
 1）下载预训练模型声音模型fastspeech2_mix_ckpt_1.2.0和声码器模型hifigan_aishell3_ckpt_0.2.0放到pretrained_models文件夹下<br />
 https://paddlespeech.bj.bcebos.com/t2s/chinse_english_mixed/models/fastspeech2_mix_ckpt_1.2.0.zip <br />
 https://paddlespeech.bj.bcebos.com/Parakeet/released_models/hifigan/hifigan_aishell3_ckpt_0.2.0.zip
