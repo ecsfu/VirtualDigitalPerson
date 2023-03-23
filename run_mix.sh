@@ -37,7 +37,7 @@ if [ ${stage} -le 0 ] && [ ${stop_stage} -ge 0 ]; then
         --pretrained_model_dir=${pretrained_model_dir} \
         --newdir_name=${newdir_name} \
         --lang=${lang}
-    echo '0 done'
+    echo '0-done'
 fi
 
 # get mfa result
