@@ -7,7 +7,7 @@ input_dir=./data/$speaker/train_samples
 newdir_name="newdir"
 new_dir=${input_dir}/${newdir_name}
 pretrained_model_dir=./pretrained_models/fastspeech2_mix_ckpt_1.2.0
-mfa_dir=./mfa_result
+mfa_dir=./mfa_result/
 dump_dir=./dump
 output_dir=./exp/default
 duration_dir=./data/$speaker
@@ -45,7 +45,7 @@ if [ ${stage} -le 1 ] && [ ${stop_stage} -ge 1 ]; then
     echo "get mfa result"
     python local/get_mfa_result.py \
         --input_dir=${new_dir} \
-        --mfa_dir=${mfa_dir} \
+        --mfa_dir=${mfa_dir}/$speaker \
         --lang=${lang}
 fi
 
@@ -58,6 +58,7 @@ fi
 # extract feature
 if [ ${stage} -le 3 ] && [ ${stop_stage} -ge 3 ]; then
     echo "extract feature"
+    echo ${new_dir}
     python local/extract_feature.py \
         --duration_file=./data/$speaker/durations.txt \
         --input_dir=${new_dir} \
