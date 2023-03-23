@@ -1,5 +1,5 @@
 # VirtualDigitalPerson
-###1.端到端声音克隆
+###1.端到端声音克隆<br />
 1）下载预训练模型声音模型fastspeech2_mix_ckpt_1.2.0和声码器模型hifigan_aishell3_ckpt_0.2.0放到pretrained_models文件夹下<br />
 2）将视频放到data\speaker\input_video文件夹下<br />
 3）运行run_preprocess.sh,生成训练数据<br />
