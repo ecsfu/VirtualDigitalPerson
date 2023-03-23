@@ -9,7 +9,7 @@ https://paddlespeech.bj.bcebos.com/Parakeet/released_models/hifigan/hifigan_aish
 https://paddlespeech.bj.bcebos.com/MFA/ernie_sat/aishell3_model.zip<br />
 
 * 安装MFA<br />
-conda config --add channels conda-forge
+conda config --add channels conda-forge<br />
 conda install montreal-forced-aligner
 
 * 启动mfa服务<br />
