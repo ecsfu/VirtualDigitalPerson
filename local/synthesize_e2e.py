@@ -164,7 +164,7 @@ def parse_args():
     parser.add_argument(
         '--am',
         type=str,
-        default='fastspeech2_csmsc',
+        default='fastspeech2_aishell3',
         choices=[
             'speedyspeech_csmsc',
             'speedyspeech_aishell3',
@@ -182,34 +182,34 @@ def parse_args():
         ],
         help='Choose acoustic model type of tts task.')
     parser.add_argument(
-        '--am_config', type=str, default=None, help='Config of acoustic model.')
+        '--am_config', type=str, default="./pretrained_models/fastspeech2_mix_ckpt_1.2.0/default.yaml", help='Config of acoustic model.')
     parser.add_argument(
         '--am_ckpt',
         type=str,
-        default=None,
+        default="./exp/default/checkpoints/snapshot_iter_100298.pdz",
         help='Checkpoint file of acoustic model.')
     parser.add_argument(
         "--am_stat",
         type=str,
-        default=None,
+        default="./pretrained_models/fastspeech2_mix_ckpt_1.2.0/speech_stats.npy",
         help="mean and standard deviation used to normalize spectrogram when training acoustic model."
     )
     parser.add_argument(
-        "--phones_dict", type=str, default=None, help="phone vocabulary file.")
+        "--phones_dict", type=str, default="./dump/phone_id_map.txt", help="phone vocabulary file.")
     parser.add_argument(
         "--tones_dict", type=str, default=None, help="tone vocabulary file.")
     parser.add_argument(
-        "--speaker_dict", type=str, default=None, help="speaker id map file.")
+        "--speaker_dict", type=str, default="./dump/speaker_id_map.txt", help="speaker id map file.")
     parser.add_argument(
         '--spk_id',
         type=int,
-        default=0,
+        default=174,
         help='spk id for multi speaker acoustic model')
     # vocoder
     parser.add_argument(
         '--voc',
         type=str,
-        default='pwgan_csmsc',
+        default='hifigan_aishell3',
         choices=[
             'pwgan_csmsc',
             'pwgan_ljspeech',
@@ -227,20 +227,20 @@ def parse_args():
         ],
         help='Choose vocoder type of tts task.')
     parser.add_argument(
-        '--voc_config', type=str, default=None, help='Config of voc.')
+        '--voc_config', type=str, default="pretrained_models/hifigan_aishell3_ckpt_0.2.0/default.yaml", help='Config of voc.')
     parser.add_argument(
-        '--voc_ckpt', type=str, default=None, help='Checkpoint file of voc.')
+        '--voc_ckpt', type=str, default="pretrained_models/hifigan_aishell3_ckpt_0.2.0/snapshot_iter_2500000.pdz", help='Checkpoint file of voc.')
     parser.add_argument(
         "--voc_stat",
         type=str,
-        default=None,
+        default="pretrained_models/hifigan_aishell3_ckpt_0.2.0/feats_stats.npy",
         help="mean and standard deviation used to normalize spectrogram when training voc."
     )
     # other
     parser.add_argument(
         '--lang',
         type=str,
-        default='zh',
+        default='mix',
         help='Choose model language. zh or en or mix')
 
     parser.add_argument(
@@ -252,9 +252,10 @@ def parse_args():
         "--ngpu", type=int, default=1, help="if ngpu == 0, use cpu.")
     parser.add_argument(
         "--text",
+        default='./real_sentence.txt',
         type=str,
         help="text to synthesize, a 'utt_id sentence' pair per line.")
-    parser.add_argument("--output_dir", type=str, help="output dir.")
+    parser.add_argument("--output_dir", default='./test_e2e',type=str, help="output dir.")
     parser.add_argument(
         "--use_rhy",
         type=str2bool,
