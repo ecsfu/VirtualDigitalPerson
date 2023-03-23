@@ -21,6 +21,8 @@ if __name__ == '__main__':
     main()  #生成音频到指定文件夹
     input_wav = './test_e2e/realwav.wav'
     out_dir = './gen_video'
+    if not os.path.exists(out_dir):
+        os.makedirs(out_dir,exist_ok=True)
 
 
     output = os.path.join(out_dir, 'realwav.mp4')
