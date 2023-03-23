@@ -26,7 +26,10 @@ https://github.com/PaddlePaddle/PaddleSpeech<br />
 https://github.com/jerryuhoo/VTuberTalk<br />
 
 ## 2.虚拟人生成<br />
+
 1）将人物动作视频放到data\action_video文件夹下<br />
+
 2）打开gereral_demo.py,在--human参数中填写刚才放入的视频路径，在--text参数中输入要虚拟人物说的文字。<br />
+
 3) 运行gereral_demo.py，生成视频将存放在gen_video文件夹下<br />
 
