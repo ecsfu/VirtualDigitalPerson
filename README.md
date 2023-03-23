@@ -8,6 +8,6 @@ https://paddlespeech.bj.bcebos.com/Parakeet/released_models/hifigan/hifigan_aish
 4）运行run_mix.sh 进行声音合成，test_sencens.txt中为输入文字，合成音频会放在test_e2e文件夹下<br />
 
 参考项目：
-https://github.com/PaddlePaddle/PaddleSpeech
+https://github.com/PaddlePaddle/PaddleSpeech<br />
 https://github.com/jerryuhoo/VTuberTalk
 
