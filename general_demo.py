@@ -9,8 +9,7 @@ from PaddleTools.GAN import wav2lip
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--human', type=str,default=r'data\action_video\action_vedio.mp4', help='human video')
-# parser.add_argument('--output', type=str, default='output.mp4', help='output video')
-parser.add_argument('--text', type=str,default='测试数字人视频生成,这段话比家产，还有english', help='human video')
+parser.add_argument('--text', type=str,default='测试数字人视频生成,这段话比较长，还有english', help='text')
 
 if __name__ == '__main__':
     args = parser.parse_args()
@@ -19,7 +18,7 @@ if __name__ == '__main__':
         f.write('realwav'+' '+text+'\n')
     # TTS = TTSExecutor('default.yaml') #PaddleSpeech语音合成模块
     # wavfile = TTS.run(text=args.text,output='output.wav') #合成音频
-    main()
+    main()  #生成音频到指定文件夹
     input_wav = './test_e2e/realwav.wav'
     out_dir = './gen_video'
 
